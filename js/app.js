@@ -16,7 +16,7 @@ const gVals = {
 
 }
 
-
+var pf = new petfinder.Client({apiKey: "m4h0S62lGppvMaz0FEcO1W76D24Zq0eM57WzcvqD20btKev4Xv", secret: "EpU3nDVn69O46nC0pgIjsmTWIPdLu1HrEI2dFAbS"});
 
 // CLASSES
 
@@ -53,32 +53,12 @@ const myFuncs = {
     }
 }
 
-
-//DOM VARIABLES
-
-const domVals = {
-
-
-
-}
-
-
-
-//EVENT LISTENERS
-
-
-
-
-
-
-//THE PROGRAM
+//GENERATE CONTENT FUNCTION
 
 const generateContent = (event) =>
     {
 
     animalType = $(event.target).text();
-
-    var pf = new petfinder.Client({apiKey: "m4h0S62lGppvMaz0FEcO1W76D24Zq0eM57WzcvqD20btKev4Xv", secret: "EpU3nDVn69O46nC0pgIjsmTWIPdLu1HrEI2dFAbS"});
 
 //MAKE API CALL
     pf.animal.search({type:`${animalType}`})
@@ -140,4 +120,32 @@ const generateContent = (event) =>
         alert('Cant get information');
     });}
 
+
+//DOM VARIABLES
+
+const domVals = {
+
+
+
+}
+
+
+
+//EVENT LISTENERS
+
 $('.type').on('click',generateContent);
+
+
+
+
+//THE PROGRAM
+
+
+
+
+
+
+pf.animalData.types()
+  .then(resp => {
+    console.log(resp);
+  });
