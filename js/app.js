@@ -73,14 +73,20 @@ const domVals = {
 
 //THE PROGRAM
 
-var pf = new petfinder.Client({apiKey: "m4h0S62lGppvMaz0FEcO1W76D24Zq0eM57WzcvqD20btKev4Xv", secret: "EpU3nDVn69O46nC0pgIjsmTWIPdLu1HrEI2dFAbS"});
+const generateContent = (event) =>
+    {
+
+    animalType = $(event.target).text();
+
+    var pf = new petfinder.Client({apiKey: "m4h0S62lGppvMaz0FEcO1W76D24Zq0eM57WzcvqD20btKev4Xv", secret: "EpU3nDVn69O46nC0pgIjsmTWIPdLu1HrEI2dFAbS"});
 
 //MAKE API CALL
-pf.animal.search({type: "Bird"})
+    pf.animal.search({type:`${animalType}`})
     .then((response) => {
     console.log(response.data.animals);
     //MAP DATA TO DOM
     $('main').empty();
+    $('.modalcontainer').remove();
     response.data.animals.map((pet) => {
             $record = $('<div>').addClass('record');
             $('main').append($record);
@@ -93,18 +99,27 @@ pf.animal.search({type: "Bird"})
 
                 <button><a href="${pet.url}">Adopt</a></button>
 
-                <button class="${pet.name}">More Details</button>
+                <button class="p${pet.id}">More Details</button>
                 `
             );
             console.log('gendiv')
             //GENERATE MODAL
-            $modaldiv = $('<div>').addClass('modalcontainer').addClass(`${pet.name}modal`);
+            $modaldiv = $('<div>').addClass('modalcontainer').addClass(`p${pet.id}modal`);
             $modal = $('<div>').addClass('modal');
             $('body').append($modaldiv);
             $modaldiv.append($modal);
             $modal.html(`
 
-                ${pet}
+                <span class="title">Type:</span> ${pet.type}<br><Br>
+                <span class="title">Name:</span> ${pet.name}<br><Br>
+                <span class="title">Breed:</span> ${pet.breeds.primary}<br><Br>
+                <span class="title">Gender:</span> ${pet.gender}<br><Br>
+                <span class="title">Age:</span> ${pet.age}<br><Br>
+                <span class="title">Color:</span> ${pet.colors.primary}<br><Br>
+                <span class="title">Contact:</span> ${pet.contact.email}<br><Br>
+                <span class="title">Description:</span> ${pet.description}<br><Br>
+                <span class="title">City:</span> ${pet.contact.address.city}<br><Br>
+                <span class="title">State:</span> ${pet.contact.address.state}<br>
 
 
                 `);
@@ -113,8 +128,8 @@ pf.animal.search({type: "Bird"})
             $modalbutton = $('<button>');
             $modalbutton.text('CLOSE');
             $modal.append($modalbutton);
-            $modalbutton.on('click',()=>{$(`.${pet.name}modal`).hide();});
-            $(`.${pet.name}`).on('click',()=>{$(`.${pet.name}modal`).show()});
+            $modalbutton.on('click',()=>{$(`.p${pet.id}modal`).hide();});
+            $(`.p${pet.id}`).on('click',()=>{$(`.p${pet.id}modal`).show()});
             $modaldiv.hide();
             console.log('genmodal');
 
@@ -123,4 +138,6 @@ pf.animal.search({type: "Bird"})
     })
     .catch((error) => {
         alert('Cant get information');
-    });
+    });}
+
+$('.type').on('click',generateContent);
