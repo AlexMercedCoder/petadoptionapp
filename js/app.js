@@ -76,9 +76,33 @@ const domVals = {
 var pf = new petfinder.Client({apiKey: "m4h0S62lGppvMaz0FEcO1W76D24Zq0eM57WzcvqD20btKev4Xv", secret: "EpU3nDVn69O46nC0pgIjsmTWIPdLu1HrEI2dFAbS"});
 
 pf.animal.search({type: "Bird"})
-    .then(function (response) {
-    console.log(response);
+    .then((response) => {
+    console.log(response.data.animals);
+    response.data.animals.map((pet) => {
+
+            $record = $('<div>').addClass('record');
+            $('main').append($record);
+            $record.html(
+                `
+                <span class="title">Name:</span> ${pet.name}<br><Br>
+                <span class="title">Breed:</span> ${pet.breeds.primary}<br><Br>
+                <span class="title">Gender:</span> ${pet.gender}<br><Br>
+                <span class="title">Age:</span> ${pet.age}<br><Br>
+
+                <button><a href="${pet.url}">Adopt</a></button>
+
+                <button>More Details</button>
+
+
+
+                `
+
+
+            )
+
+
+        })
     })
-    .catch(function (error) {
-        // Handle the error
+    .catch((error) => {
+        alert('Cant get information');
     });
