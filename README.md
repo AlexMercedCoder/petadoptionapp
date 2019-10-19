@@ -13,7 +13,7 @@
 
 ## Design of Functionality
 
-90% of this application is one function that is run when any of the buttons are pushed. Below I'll breakdown the function.
+90% of this application is one function that is runs when any of the buttons are pushed. Below I'll breakdown the function.
 
 ### Making the API CALL
 ```
@@ -28,9 +28,9 @@ const generateContent = (event) =>
     console.log(response.data.animals);
 
 ```
-In this code block I take the text from the button and insert into the API call. Petfinder using an API key so has its own API interface that is dependent on the AXIOS JS library. Earlier in the code an object is declared with the key and secret key to create the "pf" object with has the authorization to make API calls.
+In this code block I take the text from the button and insert into the API call. Petfinder'a API uses an API key so has its own API interface that is dependent on the AXIOS JS library. Earlier in the code an object is declared with the key and secret key to create the "pf" object with has the authorization token to make API calls.
 
-PF.animal.search is a method that allows you request animal data and pass an object as a query. Unfortunately this only allows me to query the first level of the response so location data which an object within the object can't be queried in this method and using a traditional API endpoint doesn't work since I don't know how to request and pass the authorization token in that manner.
+PF.animal.search is a method that allows you to request animal data and pass an object as a query. Unfortunately this only allows me to query the first level of the response object so location data which is an object within the response object can't be queried in this method and using a traditional API endpoint doesn't work since I don't know how to request and pass the authorization token in that manner.
 
 Via interpolation I pass through the text of a button into the query so I don't have to replicate the function for different queries.
 
@@ -55,11 +55,11 @@ response.data.animals.map((pet) => {
             `
         );
 ```
-after getting the response from the API call, we begin mapping the object to the DOM. The API returns a fixed number of 20 responses. So the map functions first create a new div with the appropriate class to the main element tha is hard coded into the html document and is serving as the container for results.
+after getting the response from the API call, we begin mapping the object to the DOM. The API returns a fixed number of 20 responses. So the map functions first create a new div with the appropriate class and append it to the main element that is hard coded into the html document and is serving as the container for results.
 
-After appending it we edit the innerHTML of the element using interpolation to inject all the data for the record. .html instead of .text allows me to create html element without a large series of jquery commands, very similar to using JSX.
+After appending it we edit the innerHTML of the new element using interpolation to inject all the data displayed for the record. ".html()" instead of ".text()" allows me to create html elements without a large series of jquery commands, very similar to using JSX.
 
-The titles are wrapped in spans for I can add font weight in the css. Two buttons are created, one that links to the page to adopt that particular pet and one with a dynamic class name made of the letter p and records unique ID number to prevent duplicates.
+The titles are wrapped in span elements so I can add font weight in the css. Two buttons are created, one that links to the page to adopt that particular pet and one with a dynamic class name made of the letter p and records unique ID number to prevent duplicates.
 
 ### Generate the Modals
 ```
@@ -87,7 +87,7 @@ $modal.html(`
 
 ```
 
-In this code we generate the modalcontainer and modal for each record that way there is a container that is hidden with more details to called by the more details button.
+In this code we generate the modalcontainer and modal for each record that way there is a container that is hidden with more details to be called by the more details button.
 
 ### Creating the Modal Toggles
 ```
@@ -101,7 +101,7 @@ $modaldiv.hide();
 console.log('genmodal');
 ```
 
-here the button is created and an event listener is created that hides and shows the dynamically class name generated earlier.
+here the button is created and an event listener is created that hides and shows the dynamic class name generated earlier.
 
 <!-- ## Other Comments -->
 
