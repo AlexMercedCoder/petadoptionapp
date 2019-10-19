@@ -1,19 +1,20 @@
-#Pet Adoption App
-##By Alex Merced
-###[Portfolio Website](https://www.AlexMercedCoder.com)
+# Pet Adoption App
+## By Alex Merced
+### [Portfolio Website](https://www.AlexMercedCoder.com)
 ---
-**SUMMARY**: This application has the purpose of allowing people to quickly lookup adoptable pets of different types and find information like contact info and location.
+**SUMMARY** : This application has the purpose of allowing people to quickly lookup adoptable pets of different types and find information like contact info and location.
 ---
-##Resources Used
+## Resources Used
 
 - The Petfinder.com api
 - The Axios Library which is used as part of Path finders API tools
 - jquery
 
-##Design of Functionality
+## Design of Functionality
 
 90% of this application is one functions that is run when any of the buttons are pushed. Below I'll breakdown the function.
 
+### Making the API CALL
 ```
 const generateContent = (event) =>
     {
@@ -32,6 +33,7 @@ PF.animal.search is a method that allows you request animal data and pass an obj
 
 Via interpolation I pass through the text of a button into the query so I don't have to replicate the function for different queries.
 
+### Mapping the Data to the DOM
 ```
 //MAP DATA TO DOM
 $('main').empty();
@@ -58,6 +60,7 @@ After appending it we edit the innerHTML of the element using interpolation to i
 
 The titles are wrapped in spans for I can add font weight in the css. Two buttons are created, one that links to the page to adopt that particular pet and one with a dynamic class name made of the letter p and records unique ID number to prevent duplicates.
 
+### Generate the Modals
 ```
 console.log('gendiv')
 //GENERATE MODAL
@@ -85,6 +88,7 @@ $modal.html(`
 
 In this code we generate the modalcontainer and modal for each record that way there is a container that is hidden with more details to called by the more details button.
 
+### Creating the Modal Toggles
 ```
 //show/hide the modal
 $modalbutton = $('<button>');
@@ -98,7 +102,7 @@ console.log('genmodal');
 
 here the button is created and an event listener is created that hides and shows the dynamically class name generated earlier.
 
-##Other Comments
+<!-- ## Other Comments -->
 
 
 <!-- Image Tag: ![alt text](image.jpg) -->
