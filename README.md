@@ -1,5 +1,6 @@
 # Pet Adoption App
 ## By Alex Merced
+### [LIVE VERSION OF THIS APP](https://alexmercedcoder.github.io/petadoptionapp/)
 ### [Portfolio Website](https://www.AlexMercedCoder.com)
 ---
 **SUMMARY** : This application has the purpose of allowing people to quickly lookup adoptable pets of different types and find information like contact info and location.
@@ -12,7 +13,7 @@
 
 ## Design of Functionality
 
-90% of this application is one functions that is run when any of the buttons are pushed. Below I'll breakdown the function.
+90% of this application is one function that is run when any of the buttons are pushed. Below I'll breakdown the function.
 
 ### Making the API CALL
 ```
