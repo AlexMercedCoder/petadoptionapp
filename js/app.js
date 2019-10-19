@@ -70,6 +70,8 @@ const generateContent = (event) =>
     response.data.animals.map((pet) => {
             $record = $('<div>').addClass('record');
             $('main').append($record);
+            // if (pet.photos[0].medium){
+            // picurl = pet.photos[0].medium;}
             $record.html(
                 `
                 <span class="title">Name:</span> ${pet.name}<br><Br>
@@ -90,6 +92,7 @@ const generateContent = (event) =>
             $modaldiv.append($modal);
             $modal.html(`
 
+
                 <span class="title">Type:</span> ${pet.type}<br><Br>
                 <span class="title">Name:</span> ${pet.name}<br><Br>
                 <span class="title">Breed:</span> ${pet.breeds.primary}<br><Br>
@@ -102,9 +105,11 @@ const generateContent = (event) =>
                 <span class="title">State:</span> ${pet.contact.address.state}<br>
 
 
-                `);
 
+                `);
+            /////////////////////
             //show/hide the modal
+            ////////////////////
             $modalbutton = $('<button>');
             $modalbutton.text('CLOSE');
             $modal.append($modalbutton);

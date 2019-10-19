@@ -103,7 +103,9 @@ console.log('genmodal');
 
 here the button is created and an event listener is created that hides and shows the dynamic class name generated earlier.
 
-<!-- ## Other Comments -->
+## Other Comments
+
+- Wanted to add photos but ran into an into an issue where if it pulled a photo for a record that didn't have one it would default to a response error and not populate. I tried to see if an if statement would allow me to test the existence of the data but even that would trigger a response error.
 
 
 <!-- Image Tag: ![alt text](image.jpg) -->
