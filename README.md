@@ -109,6 +109,8 @@ here the button is created and an event listener is created that hides and shows
 
 - After further inspection of the API documentation I figured out how to search by location. Still trying to figure out a way to make the listing photos to work without the photoless entries causing an error.
 
+- solved photo problem, instead of testing whether the first photo item existed I just checked the length of the photos array and only attempted to grab a photo if the arrays size was greater than 0.
+
 
 <!-- Image Tag: ![alt text](image.jpg) -->
 <!-- Link Tag: [title](https://www.example.com) -->

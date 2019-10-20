@@ -71,8 +71,11 @@ const generateContent = (event) =>
     response.data.animals.map((pet) => {
             $record = $('<div>').addClass('record');
             $('main').append($record);
-            // if (pet.photos[0].medium){
-            // picurl = pet.photos[0].medium;}
+            if (pet.photos.length > 0){
+            //grab photos
+            picurl = pet.photos[0].medium;
+            console.log(picurl);} else {picurl = "";}
+            //Content of each record
             $record.html(
                 `
                 <span class="title">Name:</span> ${pet.name}<br><Br>
@@ -93,7 +96,7 @@ const generateContent = (event) =>
             $modaldiv.append($modal);
             $modal.html(`
 
-
+                <img src=${picurl}><br>
                 <span class="title">Type:</span> ${pet.type}<br><Br>
                 <span class="title">Name:</span> ${pet.name}<br><Br>
                 <span class="title">Breed:</span> ${pet.breeds.primary}<br><Br>
@@ -151,7 +154,7 @@ $('.type').on('click',generateContent);
 
 
 
-pf.animal.search({type: "cat",location: "11230",distance: 10})
-.then((response) => {
-console.log(response.data.animals);
-  });
+// pf.animal.search({type: "cat",location: "11230",distance: 10})
+// .then((response) => {
+// console.log(response.data.animals);
+//   });
