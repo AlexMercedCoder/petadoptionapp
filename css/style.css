@@ -27,7 +27,7 @@ button:hover {background-color: white; color: #c38d9d;}
 
 main {padding: 20px;}
 
-.record {padding: 10px; font-size: 2em; text-align:center;}
+.record {padding: 10px; font-size: 3em; text-align:center;}
 
 .record button {font-size: 1em;}
 
@@ -57,7 +57,7 @@ main {padding: 20px;}
     transform: translate(-50%, -50%);
     background-color: #e8a87c;
     color: white;
-    font-size: 3em;
+    font-size: 2em;
     padding: 20px;
     overflow: scroll;
     border-radius: 20px;}
@@ -73,3 +73,19 @@ main {padding: 20px;}
   p {font-size: 2em;}
 
  .modal img {text-align: center; border-radius: 30px; margin: 10px; height: 150px;}
+
+ .zipcode {background-color: #c38d9d; border: 2px solid #E27D60; padding: 10px; font-size: 2em; color: white; border-radius: 20px; text-transform: uppercase; margin: 10px 0; text-align: center;}
+
+ /* Portrait and Landscape */
+@media only screen and (max-width: 600px) {
+
+      .modal {font-size: 2em; height: 200px; width: 300px;}
+
+      .record {font-size: 2em;}
+
+       .zipcode {background-color: #c38d9d; border: 2px solid #E27D60; padding: 5px; font-size: 1em; color: white; border-radius: 20px; text-transform: uppercase; margin: 5px 0; text-align: center;}
+
+       button {background-color: #c38d9d; border: 2px solid #E27D60; padding: 5px; font-size: 3em; color: white; border-radius: 20px; text-transform: uppercase; margin: 5px 0;}
+
+
+   }

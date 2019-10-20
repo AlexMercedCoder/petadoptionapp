@@ -107,6 +107,8 @@ here the button is created and an event listener is created that hides and shows
 
 - Wanted to add photos but ran into an into an issue where if it pulled a photo for a record that didn't have one it would default to a response error and not populate. I tried to see if an if statement would allow me to test the existence of the data but even that would trigger a response error.
 
+- After further inspection of the API documentation I figured out how to search by location. Still trying to figure out a way to make the listing photos to work without the photoless entries causing an error.
+
 
 <!-- Image Tag: ![alt text](image.jpg) -->
 <!-- Link Tag: [title](https://www.example.com) -->

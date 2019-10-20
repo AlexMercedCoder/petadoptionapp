@@ -59,9 +59,10 @@ const generateContent = (event) =>
     {
 
     animalType = $(event.target).text();
+    zipcode = $('.zipcode').val();
 
 //MAKE API CALL
-    pf.animal.search({type:`${animalType}`})
+    pf.animal.search({type:`${animalType}`,location: `${zipcode}`,distance: 10, limit:100})
     .then((response) => {
     console.log(response.data.animals);
     //MAP DATA TO DOM
@@ -150,7 +151,7 @@ $('.type').on('click',generateContent);
 
 
 
-pf.animalData.types()
-  .then(resp => {
-    console.log(resp);
+pf.animal.search({type: "cat",location: "11230",distance: 10})
+.then((response) => {
+console.log(response.data.animals);
   });
