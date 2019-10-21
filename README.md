@@ -111,6 +111,8 @@ here the button is created and an event listener is created that hides and shows
 
 - solved photo problem, instead of testing whether the first photo item existed I just checked the length of the photos array and only attempted to grab a photo if the arrays size was greater than 0.
 
+- Added the ability to choose page number to see beyond the first page of results.
+
 
 <!-- Image Tag: ![alt text](image.jpg) -->
 <!-- Link Tag: [title](https://www.example.com) -->

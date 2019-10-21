@@ -60,9 +60,10 @@ const generateContent = (event) =>
 
     animalType = $(event.target).text();
     zipcode = $('.zipcode').val();
+    pagenum = $('.pagenum').val();
 
 //MAKE API CALL
-    pf.animal.search({type:`${animalType}`,location: `${zipcode}`,distance: 10, limit:100})
+    pf.animal.search({type:`${animalType}`,location: `${zipcode}`,distance: 10, limit:50, page: parseInt(pagenum),})
     .then((response) => {
     console.log(response.data.animals);
     //MAP DATA TO DOM
