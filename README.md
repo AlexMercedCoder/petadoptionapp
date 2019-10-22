@@ -113,6 +113,8 @@ here the button is created and an event listener is created that hides and shows
 
 - Added the ability to choose page number to see beyond the first page of results.
 
+- Final touch I added some CSS tooltips using the ::before psuedo-element
+
 
 <!-- Image Tag: ![alt text](image.jpg) -->
 <!-- Link Tag: [title](https://www.example.com) -->

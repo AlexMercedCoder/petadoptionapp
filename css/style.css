@@ -76,6 +76,46 @@ main {padding: 20px;}
 
  .zipcode, .pagenum {background-color: #c38d9d; border: 2px solid #E27D60; padding: 10px; font-size: 2em; color: white; border-radius: 20px; text-transform: uppercase; margin: 10px 0; text-align: center;}
 
+.ziptool::before {
+    content: "Enter Zip Code";
+    height: 10px;
+    width: 9%;
+    font-size: 50%;
+    color: black;
+    margin: 2px auto;
+    background-color: white;
+    position: absolute;
+    top: 32%;
+    left: 46%;
+    padding:3px;
+    display: none;
+    /* visibility: hidden; */
+}
+
+.ziptool:hover::before {
+    display: block;
+}
+
+.pagetool::before {
+    content: "Results Page #";
+    height: 10px;
+    width: 9%;
+    font-size: 50%;
+    color: black;
+    margin: 2px auto;
+    background-color: white;
+    position: absolute;
+    top: 49%;
+    left: 46%;
+    padding:3px;
+    display: none;
+    /* visibility: hidden; */
+}
+
+.pagetool:hover::before {
+    display: block;
+}
+
  /* Portrait and Landscape */
 @media only screen and (max-width: 600px) {
 
