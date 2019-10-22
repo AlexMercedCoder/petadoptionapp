@@ -83,9 +83,12 @@ main {padding: 20px;}
 
       .record {font-size: 2em;}
 
+      h1 {font-size: 4em;}
+
+
        .zipcode, .pagenum {background-color: #c38d9d; border: 2px solid #E27D60; padding: 5px; font-size: 1em; color: white; border-radius: 20px; text-transform: uppercase; margin: 5px 0; text-align: center;}
 
-       button {background-color: #c38d9d; border: 2px solid #E27D60; padding: 5px; font-size: 3em; color: white; border-radius: 20px; text-transform: uppercase; margin: 5px 0;}
+       button {background-color: #c38d9d; border: 2px solid #E27D60; padding: 5px; font-size: 2em; color: white; border-radius: 20px; text-transform: uppercase; margin: 5px 0;}
 
 
    }
